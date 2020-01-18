@@ -10,7 +10,20 @@
 <body>
 
     <div layout:fragment="admin">
-        <h1>Author Form</h1>
+       <div class="container">
+        <form action="#" th:action="@{/author}" th:object="${author}" method="post">
+            <div class="form-group row mt-5">
+                <label for="name" class="col-sm-2 form-label">Name</label>
+                <div class="col-sm8">
+                    <input id="name" th:field="*{name}" type="text" class="form-control">
+
+                    <p th:if="${#fields.errors('name')}" class="text-danger" th:errors="*{name}"></p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
