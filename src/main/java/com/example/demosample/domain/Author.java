@@ -17,7 +17,7 @@ public class Author {
     private String name;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Past
-    private LocalDate dataOfBirth;
+    private LocalDate dateOfBirth;
     @Email(message = "Invalid email format.")
     @NotEmpty(message = "Email cannot be empty.")
     private String email;
@@ -40,12 +40,12 @@ public class Author {
         this.name = name;
     }
 
-    public LocalDate getDataOfBirth() {
-        return dataOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDataOfBirth(LocalDate dataOfBirth) {
-        this.dataOfBirth = dataOfBirth;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getEmail() {
