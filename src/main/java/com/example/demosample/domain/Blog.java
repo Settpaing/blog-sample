@@ -3,12 +3,14 @@ package com.example.demosample.domain;
 import org.hibernate.annotations.Generated;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @NotEmpty(message = "Title cannot be empty!")
     private String title;
     private String category;
     @Column(columnDefinition = "TEXT")
